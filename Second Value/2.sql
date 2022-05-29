@@ -5,7 +5,7 @@
 		,unitprice
 		,qty
 		,unitprice * qty as allsum
-		,row_number() over(partition by orderid order by unitprice * qty desc) sort
+		,DENSE_RANK() over(partition by orderid order by unitprice * qty desc) sort
 	from
 		Sales.OrderDetails
 ),

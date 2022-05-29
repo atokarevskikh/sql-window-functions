@@ -4,7 +4,7 @@ as (
 		orderid
 		,productid
 		,unitprice
-		,row_number() over(partition by orderid order by unitprice desc) sort
+		,DENSE_RANK() over(partition by orderid order by unitprice desc) sort
 	from
 		Sales.OrderDetails
 )
