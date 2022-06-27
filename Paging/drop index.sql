@@ -1,0 +1,1 @@
+DROP INDEX IF EXISTS idx_od_oid_i_cid_eid ON Sales.Orders;
